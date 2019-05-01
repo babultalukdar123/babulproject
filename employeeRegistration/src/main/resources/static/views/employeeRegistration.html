@@ -1,0 +1,82 @@
+<div class="container" ng-controller="EmployeeCtrl as empCtrl">
+        <div class="row centered-form">
+        <div class="col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4">
+        	<div class="panel panel-default">
+        		<div class="panel-heading">
+			    		<h3 class="panel-title" align="center">Please sign up for Registration</h3>
+			 			</div>
+			 			<div class="panel-body" >
+			    		<form  name="form" ng-submit="empCtrl.register()">
+			    			<div class="row">
+			    				<div class="col-xs-6 col-sm-6 col-md-6">
+			    					<div class="form-group">
+			                <input type="text" name="first_name" id="first_name" class="form-control input-sm " placeholder="First Name" ng-model="empCtrl.employee.firstName" required  ng-minlength="4">
+			                <span ng-show="form.first_name.$error.required" class="validationFiedld">This is reqired field</span>
+			                <span ng-show="form.first_name.$error.minlength" class="validationFiedld">Minimum length required is 4</span>
+			    					</div>
+			    				</div>
+			    				<div class="col-xs-6 col-sm-6 col-md-6">
+			    					<div class="form-group">
+			    						<input type="text" name="last_name" id="last_name" class="form-control input-sm" placeholder="Last Name" ng-model="empCtrl.employee.lastName" required="required">
+			    					</div>
+			    				</div>
+			    			</div>
+
+			    			<div class="form-group">
+			    				<!-- <input type="text" name="gender" id="gender" class="form-control input-sm" placeholder="Gender" ng-model="empCtrl.employee.gender"> -->
+			    				<select name="gender" id="gender" class="form-control input-sm" ng-model="empCtrl.employee.gender" required="required">
+			    					<option value="" selected disabled hidden>Choose Gender</option>
+			    					<option value="male">Male</option>
+			    					<option value="female">female</option>
+			    				</select>
+			    				<span ng-show="form.gender.$error.required" class="validationFiedld">This is reqired field</span>
+			    			</div>
+
+			    			<div class="row">
+			    				<div class="col-xs-6 col-sm-6 col-md-6">
+			    					<div class="form-group">
+			    						<input type="date" name="dateOfBirth" id="dateOfBirth" class="form-control input-sm" placeholder="Date of Birth" ng-model="empCtrl.employee.dateoFBirth" required="required" >
+			    						<span ng-show="form.dateOfBirth.$error.required" class="validationFiedld">This is reqired field,date should be past date</span>
+			    					</div>
+			    				</div>
+			    				<div class="col-xs-6 col-sm-6 col-md-6">
+			    					<div class="form-group">
+			    						<input type="text" name="department" id="department" class="form-control input-sm" placeholder="Department" ng-model="empCtrl.employee.department" required="required">
+			    						<span ng-show="form.department.$error.required" class="validationFiedld">This is reqired field</span>
+			    					</div>
+			    				</div>
+			    			</div>
+			    			
+			    			<input type="submit" value="Register" class="btn btn-info btn-block">
+			    		
+			    		</form>
+			    	</div>
+	    		</div>
+    		</div>
+    	</div>
+    	<div class="row">
+    	<table class="table">
+			  <thead>
+			    <tr>
+			      <th scope="col">Employee Id</th>
+			      <th scope="col">FirstName</th>
+			      <th scope="col">LastName</th>
+			      <th scope="col">Gender</th>
+			      <th scope="col">Date of Birth</th>
+			      <th scope="col">Department</th>
+			    </tr>
+			  </thead>
+			  <tbody>
+			    <tr ng-repeat="employee in empCtrl.items">
+			      <th scope="row">{{employee.id}}</th>
+			      <td>{{employee.firstName}}</td>
+			      <td>{{employee.lastName}}</td>
+			      <td>{{employee.gender}}</td>
+			      <td>{{employee.dateoFBirth}}</td>
+			      <td>{{employee.department}}</td>
+			    </tr>
+			  </tbody>
+			</table>
+    	</div>
+    </div>
+    

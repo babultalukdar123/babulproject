@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html ng-app="employeeRegApp">
+<head>
+<meta charset="ISO-8859-1">
+<title>Welcome Page</title>
+</head>
+<body>
+
+    <div class="container">
+    <ul class="menu">
+        <li><a href="#/register">Employee Registration</a></li>
+    </ul>
+    
+    <hr class="" />
+    <div ng-view></div>
+
+</div>
+</body>
+<script src="js/lib/angular.min.js"></script>
+<script src="js/lib/angular-route.min.js"></script>
+<script src="js/app/app.js"></script>
+<!-- <script src="js/lib/ui-bootstrap-tpls-2.5.0.min.js"></script> -->
+<link rel="stylesheet" href="css/lib/bootstrap.min.css"/>
+<link rel="stylesheet" href="css/lib/app.css"/>
+</html>
